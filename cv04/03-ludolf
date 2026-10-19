@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(void)
+{
+    double presnost;
+    printf("zadejte pocet prvku Liebnitzovy rady:\n");
+    scanf("%lf", &presnost);
+
+    double pi = 0;
+    double inkrement = 4;
+    int citatel = 4;
+    int jmenovatel = 1;
+    int i;
+
+    for(int i = 0; inkrement > presnost || inkrement < -presnost; i++ )
+    {
+        inkrement = inkrement + ((double) citatel) / jmenovatel; //pretypovani citatele na double 
+        pi = pi + inkrement;
+        //printf("k = %8d pi = %12.10f\n", i, pi);
+        citatel = citatel * -1;
+        jmenovatel = jmenovatel + 2;
+
+    }
+    printf("k = %8d pi = %12.10f, inkrement = %12.10f\n", i, pi, inkrement);
+
+
+
+
+
+    return 0;
+}
